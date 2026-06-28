@@ -2,8 +2,9 @@
     import it.unicam.cs.mpgc.rpg129097.model.Personaggio;
 
     public interface Validabile {
-        void setVerificato(boolean verificato);
+        void setEsito(boolean esito);
         void setAffidabile(boolean affidabile);
         boolean isAffidabile();
-        Personaggio getProprietario();
+        boolean getEsito();
+        Personaggio getFonte();
     }
