@@ -6,19 +6,18 @@
         private String descrizione;
         private Personaggio fonte;
 
-        /** true se l'informazione è vera */
-        private boolean esito;
-
-        /** true se garantisce la verità o falsità dell'informazione */
+        /** true se è garantita la falsità o verità dell'informazione */
         private boolean affidabile;
 
         public Informazione(String descrizione, Personaggio fonte){
-            if(descrizione == null) throw new NullPointerException("descrizione non può essere nulla");
-            if(fonte == null) throw new NullPointerException("fonte non può essere nulla");
+            if(descrizione == null) throw new NullPointerException("descrizione non può essere null");
+            if(fonte == null) throw new NullPointerException("fonte non può essere null");
             this.descrizione = descrizione;
             this.fonte = fonte;
         }
 
+
+        @Override
         public String getDescrizione(){return this.descrizione;}
 
         @Override
@@ -29,11 +28,4 @@
 
         @Override
         public boolean isAffidabile(){return this.affidabile;}
-
-        @Override
-        public void setEsito(boolean esito){this.esito = esito;}
-
-        @Override
-        public boolean getEsito(){return this.esito;}
-
     }

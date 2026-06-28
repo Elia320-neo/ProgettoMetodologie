@@ -7,11 +7,10 @@ public abstract class Personaggio {
 
 
     protected Personaggio(String nome){
-        if(nome == null) throw new NullPointerException("nome non può essere Null");
+        if(nome == null) throw new NullPointerException("nome non può essere null");
         this.nome = nome;
         this.vivo = true;
     }
-
 
     public String getNome() {return this.nome;}
 
@@ -21,6 +20,5 @@ public abstract class Personaggio {
 
 
     public abstract void presentati();
-
 
 }
