@@ -19,7 +19,7 @@ public class Item implements Validatore {
 
     }
 
-   //TODO fare refactor
+   //TODO fare refactor: code as prose
     @Override
     public boolean valida(Validabile informazione){
         this.utilizzato = true;

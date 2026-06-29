@@ -1,20 +1,21 @@
-package it.unicam.cs.mpgc.rpg129097.model;
+    package it.unicam.cs.mpgc.rpg129097.model;
 
-import it.unicam.cs.mpgc.rpg129097.interfaces.ArchivioInformazioni;
+    import it.unicam.cs.mpgc.rpg129097.interfaces.ArchivioInformazioni;
 
-import java.util.Map;
+    import java.util.HashMap;
+    import java.util.Map;
+    //TODO refactor: valutare implementazione HashMap
+    public class ArchivioInMemoria implements ArchivioInformazioni {
+        private final Map<String, Boolean> esiti;
 
-public class ArchivioInMemoria implements ArchivioInformazioni {
-    private final Map<String, Boolean> esiti;
+        public ArchivioInMemoria() {
+            this.esiti = new HashMap<>();
+        }
 
-    public ArchivioInMemoria(Map<String, Boolean> esiti){
-        this.esiti = esiti;
+        @Override
+        public boolean getEsito(String descrizione){
+            return esiti.getOrDefault(descrizione, false);
+        }
+
+
     }
-
-    @Override
-    public boolean getEsito(String descrizione){
-        return esiti.getOrDefault(descrizione, false);
-    }
-
-
-}

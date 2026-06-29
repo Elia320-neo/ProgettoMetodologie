@@ -6,6 +6,9 @@
         private String descrizione;
         private Personaggio fonte;
 
+        /** true se l'informazione è vera*/
+        private boolean esito;
+
         /** true se è garantita la falsità o verità dell'informazione */
         private boolean affidabile;
 
@@ -28,4 +31,11 @@
 
         @Override
         public boolean isAffidabile(){return this.affidabile;}
+
+        public void  setEsito(boolean esito){this.esito = esito;}
+
+        public boolean getEsito(){return this.esito;}
+
     }
+
+
