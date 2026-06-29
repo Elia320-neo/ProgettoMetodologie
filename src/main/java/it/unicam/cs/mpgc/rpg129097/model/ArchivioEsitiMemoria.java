@@ -2,14 +2,13 @@
 
     import it.unicam.cs.mpgc.rpg129097.interfaces.ArchivioEsiti;
 
-    import java.util.HashMap;
     import java.util.Map;
 
     public class ArchivioEsitiMemoria implements ArchivioEsiti {
         private final Map<String, Boolean> esiti;
 
-        public ArchivioEsitiMemoria() {
-            this.esiti = new HashMap<>();
+        public ArchivioEsitiMemoria(Map<String, Boolean> esiti) {
+            this.esiti = esiti;
         }
 
 
