@@ -8,15 +8,18 @@ public class ArchivioProposizioni {
 
     private final Map<String, Proposizione> proposizioni;
 
-    public ArchivioProposizioni(Collection<Proposizione> props) {
+    public ArchivioProposizioni(Collection<Proposizione> proposizioni) {
+        if (proposizioni == null) throw new NullPointerException("proposizioni non può essere null");
         this.proposizioni = new HashMap<>();
-        for (Proposizione p : props) {
-            proposizioni.put(p.getDescrizione(), p);
+        for (Proposizione proposizione : proposizioni) {
+            this.proposizioni.put(proposizione.getDescrizione(), proposizione);
         }
     }
 
     public Proposizione cerca(String descrizione) {
-        return proposizioni.get(descrizione);
+        Proposizione proposizione = proposizioni.get(descrizione);
+        if (proposizione == null) throw new NoSuchElementException("Nessuna proposizione trovata per: " + descrizione);
+        return proposizione;
     }
 
 }
