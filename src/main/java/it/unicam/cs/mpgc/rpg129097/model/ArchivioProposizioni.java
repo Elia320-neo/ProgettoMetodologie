@@ -1,26 +1,22 @@
-    package it.unicam.cs.mpgc.rpg129097.model;
+package it.unicam.cs.mpgc.rpg129097.model;
 
+import it.unicam.cs.mpgc.rpg129097.interfaces.Proposizione;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
-public class ArchivioFatti {
+public class ArchivioProposizioni {
 
-    private final List<Fatto> fatti;
+    private final Map<String, Proposizione> proposizioni;
 
-    public ArchivioFatti(List<Fatto> fatti) {
-        this.fatti = new ArrayList<>(fatti);
+    public ArchivioProposizioni(Collection<Proposizione> props) {
+        this.proposizioni = new HashMap<>();
+        for (Proposizione p : props) {
+            proposizioni.put(p.getDescrizione(), p);
+        }
     }
 
-    public Optional<Fatto> cerca(String descrizione) {
-        return fatti.stream()
-                .filter(f -> f.getDescrizione().equals(descrizione))
-                .findFirst();
+    public Proposizione cerca(String descrizione) {
+        return proposizioni.get(descrizione);
     }
 
-    public boolean verifica(String descrizione) {
-        return cerca(descrizione)
-                .map(Fatto::isVero)
-                .orElse(false);
-    }
 }
