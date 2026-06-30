@@ -15,11 +15,11 @@ repositories{
 }
 
 dependencies{
-
+    implementation("com.google.code.gson:gson:2.13.2")
 }
 
 application{
-    mainClass="it.unicam.cs.mpgc.rpg129097.Prova"
+    mainClass="it.unicam.cs.mpgc.rpg129097.MainController"
 }
 
 
