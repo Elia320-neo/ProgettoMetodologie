@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.List;
 
-public class ArchivioEsitiParserJson {
+public class ParserProposizioni {
 
     public ArchivioProposizioni parse(String resourcePath) {
         try (InputStream is = getClass().getClassLoader().getResourceAsStream(resourcePath)) {
