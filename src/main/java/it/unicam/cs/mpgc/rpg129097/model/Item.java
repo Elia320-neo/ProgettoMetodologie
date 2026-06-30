@@ -1,6 +1,6 @@
 package it.unicam.cs.mpgc.rpg129097.model;
 
-import it.unicam.cs.mpgc.rpg129097.interfaces.ArchivioEsiti;
+import it.unicam.cs.mpgc.rpg129097.interfaces.Proposizione;
 import it.unicam.cs.mpgc.rpg129097.interfaces.Validabile;
 import it.unicam.cs.mpgc.rpg129097.interfaces.Validatore;
 
@@ -8,9 +8,9 @@ public class Item implements Validatore {
     private String nome;
     private String descrizione;
     private boolean utilizzato;
-    private final ArchivioEsiti archivio; //dipendenza di utilizzo
+    private final ArchivioProposizioni archivio; //dipendenza di utilizzo
 
-    public Item(String nome, String descrizione, ArchivioEsiti archivio){
+    public Item(String nome, String descrizione, ArchivioProposizioni archivio){
         if(nome == null) throw new NullPointerException("nome non può essere null");
         if(descrizione == null) throw new NullPointerException("descrizione non può essere nulll");
         this.nome = nome;
@@ -24,8 +24,8 @@ public class Item implements Validatore {
     public boolean valida(Validabile informazione){
         this.utilizzato = true;
         informazione.setAffidabile(true);
-        boolean esito = archivio.getEsito(informazione.getDescrizione());
-       return esito;
+        Proposizione proposizione = archivio.cerca(informazione.getDescrizione());
+       return proposizione.getEsito();
     }
 
     public String getDescrizione(){return this.descrizione;}
