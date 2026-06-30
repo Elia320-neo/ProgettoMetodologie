@@ -1,8 +1,9 @@
     package it.unicam.cs.mpgc.rpg129097.model;
 
+    import it.unicam.cs.mpgc.rpg129097.interfaces.Attribuibile;
     import it.unicam.cs.mpgc.rpg129097.interfaces.Validabile;
 
-    public class Informazione implements Validabile {
+    public class Informazione implements Validabile, Attribuibile {
         private String descrizione;
         private Personaggio fonte;
 
