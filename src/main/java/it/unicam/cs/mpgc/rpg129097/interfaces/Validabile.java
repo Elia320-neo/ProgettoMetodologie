@@ -5,5 +5,4 @@
         void setAffidabile(boolean affidabile);
         boolean isAffidabile();
         String getDescrizione();
-        Personaggio getFonte();
     }
